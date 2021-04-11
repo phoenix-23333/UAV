@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;}
+		body{height: 100%; width: 100%; background-color: #050505;font-family: SimSun;font-size: 40px;text-align: center;font-weight: bold;}
+		div#wrapper{
+			width: 1366px;
+			height: 2835px;
+			background-image: url(image/news/mainimage.png);
+			background-position: center;
+			margin: 0 auto;
+		}
+		area{outline: none;}
+		div#navigation{
+			width: 1366px;
+			height: 54px;
+			margin: 0 auto;
+		}
+		div#newpage{
+			width: 1366px;
+			height: 716px;
+			margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+		}
+		div#newpage a{
+			width: 60px;
+			height: 50px;
+			background-color: #050505;
+			text-align: center;
+			text-decoration: none;
+			filter: alpha(opacity:60);
+			opacity: 0.6;
+			position: absolute;
+			top: 320px;
+		}
+		div#newpage a:hover {
+			background-color: #40eadd;
+			filter: alpha(opacity:90);
+			opacity: 0.9;
+		}
+		#prev{left: 0.5px;}
+		#next{right: 0.5px;}
+		#span1{
+			width: 1366px;
+			position: absolute;
+			left: 0;
+			height: 25px;
+			text-align: center;
+			opacity: 0.5;
+		}
+		div#buys{
+			width: 1366px;
+			height: 344px;
+        	margin:0 auto;
+		}
+        div#goods{
+        	width: 1366px;
+        	height: 344px;
+        	margin:0 auto;
+        	position: relative;
+        	background-image: url(image/news/npg.png);
+        }
+        div.clothes1{width: 239px;height: 344px;float: left;}
+        div.clothes2{width: 240px;height: 344px;float: left;}
+        div.clothes3{width: 239px;height: 344px;float: left;}
+        div#clothes1{margin-left: 325px;}
+        div#clothes1 img{opacity: 0.5;display: none;}
+        div#clothes2 img{opacity: 0.5;display: none;}
+        div#clothes3 img{opacity: 0.5;display: none;}
+        div#disscusm{
+        	width: 1366px;
+			height: 1456px;
+        	margin:0 auto;
+        }
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header></header>
+		<main>
+       <div id="navigation">
+          <img src="image/news/navi.png" border="0" usemap="#namap" alt="navi"/>
+          <map name="namap" id="namap">
+             <area shape="rect" coords="17.75,13.00,117.25,44.00" href="index.html" alt="logo">
+             <area shape="rect" coords="564.50,13.00,605.50,44.00" href="dress.html" alt="穿搭">
+             <area shape="rect" coords="617.50,13.00,660.50,44.00" href="forum.html" alt="论坛">
+             <area shape="rect" coords="670.50,13.00,710.50,44.00" href="new.html" alt="新闻">
+             <area shape="rect" coords="723.50,13.00,804.50,44.00" href="person/person.html" alt="个人中心">
+             <area shape="circle" coords="1332.75,29.75,17.25" href="person/person.html" alt="头像">
+          </map>
+       </div>
+       <div id="newpage">
+          <a href="javascript:;" id="prev" style="color: white"><</a>
+          <a href="javascript:;" id="next" style="color: white">></a>
+          <img alt="" id="img1" onclick="show()">
+          <span id="span1"></span>
+       </div>
+       <div id="buys">
+          <img src="image/news/buysell.png" border="0" usemap="#buymap" alt="buysell"/>
+          <map name="buymap" id="buymap">
+             <area shape="rect" coords="1084.50,178.58,1162.50,202.49" href="forum.html" alt="进入买卖区">
+          </map>
+       </div>
+       <div id="goods">
+          <div id="clothes1" class="clothes1" onmouseover="document.getElementById('mask1').style.display='block'" onmouseout="document.getElementById('mask1').style.display='none'">
+          	<img id="mask1" src="image/news/mov.png" border="0" usemap="#gomap" alt="箭头"/>
+          	<map name="gomap" id="gomap"><area shape="rect" coords="181.50,148.50,239.00,195.50" href="forum.html" alt="链接"></map>
+          </div>
+          <div id="clothes2" class="clothes2" onmouseover="document.getElementById('mask2').style.display='block'" onmouseout="document.getElementById('mask2').style.display='none'">
+            <img id="mask2" src="image/news/mmm.png" border="0" usemap="#goemap" alt="箭头"/>
+            <map name="goemap" id="goemap"><area shape="rect" coords="183.50,148.50,240.00,196.50" href="forum.html" alt="链接"></map>
+          </div>
+          <div id="clothes3" class="clothes3" onmouseover="document.getElementById('mask3').style.display='block'" onmouseout="document.getElementById('mask3').style.display='none'">
+            <img id="mask3" src="image/news/mov.png" border="0" usemap="#goesmap" alt="箭头"/>
+            <map name="goesmap" id="goesmap"><area shape="rect" coords="181.50,148.50,239.00,195.50" href="forum.html" alt="链接"></map>
+          </div>
+       </div>
+       <div id="disscusm">
+          <img src="image/news/disscusmap.png" border="0" usemap="#dismap" alt="disscusion"/>
+          <map name="dismap" id="dismap">
+            <area shape="rect" coords="1098,303.00,1161.50,326.21" href="forum.html" alt="进入论坛">
+            <area shape="rect" coords="242.16,353.20,575,434.17" href="forum.html" alt="用户1">
+            <area shape="rect" coords="778.80,353.20,1117.50,434.17" href="forum.html" alt="用户2">
+            <area shape="rect" coords="242.16,506.15,575,584.12" href="forum.html" alt="用户3">
+            <area shape="rect" coords="778.80,506.15,1117.50,584.12" href="forum.html" alt="用户4">
+            <area shape="rect" coords="583.86,864.52,778.79,923.00" href="dress.html" alt="开始穿搭">
+            <area shape="rect" coords="874.75,1240.50,960.22,1269.50" href="" alt="联系我们">
+            <area shape="rect" coords="976.71,1240.50,1059.50,1269.50" href="" alt="网站地图">
+            <area shape="rect" coords="1075.50,1240.50,1161.50,1269.50" href="" alt="隐私政策">
+          </map>
+       </div>
+       <script type="text/javascript">
+          window.onload = function(){
+          	var prev = document.getElementById('prev');
+          	var next = document.getElementById('next');
+          	var img1 = document.getElementById('img1');
+          	var span1 = document.getElementById('span1');
+          	var arrUrl = ['image/news/newsimg.png','image/news/thrid.png','image/news/second.png','image/news/frist.png'];
+          	var num = 0;
+          	function fnTab(){
+          		img1.src = arrUrl[num];
+          	}
+          	fnTab();
+          	next.onclick = function(){
+          		num ++;
+          		if(num == arrUrl.length){
+          			num=0;
+          		}
+          		fnTab();
+          	}
+          	prev.onclick = function(){
+          		num --;
+          		if(num == -1){
+          			num = arrUrl.length - 1;
+          		}
+          		fnTab();
+          	}
+          }
+       </script>
+       <script type="text/javascript">
+            function show(){
+            	window.location.href="http://www.bazaar.com.cn/"
+            }
+       </script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+</html>

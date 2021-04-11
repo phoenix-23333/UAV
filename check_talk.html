@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("area#close").click(function(){	//关闭帖子
+				window.parent.document.getElementById("mask2").style.display="none";
+			});
+			$("area#share").click(function(){	//转发弹窗
+				window.parent.document.getElementById("mask4").style.display="block";
+			});
+		});
+	</script>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;-webkit-user-select: none;}
+		body{height: 100%; width: 100%; background-color: #050505;}
+		area{cursor: pointer;}
+		div#wrapper{
+			width: 787.33px;
+			margin: 0 auto;
+		}
+		div#wrapper img{
+			width: 787.33px;
+		}
+		area{outline: none; cursor: pointer;}
+	</style>
+</head>
+<body>
+	
+	<div id="wrapper">
+		<img src="image/forum/check_talk.png" usemap="#check_talk">
+		<map id="check_talk" name="check_talk">
+			<area id="close" shape="rect" coords="767,0,788,21" alt="关闭帖子">
+			<area shape="circle" coords="651.5,36,36.5" alt="头像">
+			<area shape="rect" coords="614,89,689,101" alt="关注">
+			<area shape="rect" coords="426,399,442,415" alt="帖子点赞">
+			<area shape="rect" coords="452,399,471,415" alt="帖子回复">
+			<area id="share" shape="rect" coords="481,399,498,415" alt="帖子转发">
+			<area shape="rect" coords="504,399,521,415" alt="帖子收藏">
+			<area shape="rect" coords="484,517,498,532" alt="">
+			<area shape="rect" coords="484,589,498,604" alt="">
+			<area shape="rect" coords="484,661,498,676" alt="">
+			<area shape="rect" coords="484,733,498,748" alt="">
+			<area shape="rect" coords="502,517,517,532" alt="">
+			<area shape="rect" coords="502,589,517,604" alt="">
+			<area shape="rect" coords="502,661,517,676" alt="">
+			<area shape="rect" coords="502,733,517,748" alt="">
+		</map>
+	</div>
+</body>
+</html>

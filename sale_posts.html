@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("div.post").mouseenter(function(){ //鼠标移到图片上
+				$(this).children().fadeIn("slow");
+			});
+			$("div.post").mouseleave(function(){ //鼠标从图片上移走
+				$(this).children().css("display","none");
+			});
+			$("div.button").click(function(){ //打开详情页
+				window.parent.document.getElementById("mask3").style.display="block";
+			});
+		});
+	</script>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;}
+		body{height: 100%; width: 100%; background-color: #050505;}
+		div#wrapper{
+			width: 756px;
+			margin: 0 auto;
+			position: relative;
+		}
+		div.post{
+			width: 378px;
+			height: 333px;
+			float: left;
+			background-size: cover;
+			position: relative;
+		}
+		div#post1{background-image: url(image/posts/sale_post1.png);}
+		div#post2{background-image: url(image/posts/sale_post2.png);}
+		div#post3{background-image: url(image/posts/sale_post3.png);}
+		div#post4{background-image: url(image/posts/sale_post4.png);}
+		div#post5{background-image: url(image/posts/sale_post1.png);}
+		div#post6{background-image: url(image/posts/sale_post2.png);}
+		div#post7{background-image: url(image/posts/sale_post3.png);}
+		div#post8{background-image: url(image/posts/sale_post4.png);}
+		div.button{
+			cursor: pointer;
+			width: 98px;
+			height: 47px;
+			background-image: url(image/posts/check.png);
+			background-size: cover;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="post1" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post2" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post3" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post4" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post5" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post6" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post7" class="post">
+			<div class="button"></div>
+		</div>
+		<div id="post8" class="post">
+			<div class="button"></div>
+		</div>
+	</div>
+</body>
+</html>

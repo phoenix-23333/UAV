@@ -1,0 +1,253 @@
+.body1 {
+  background-image: url("image/indexnew.image/body1.jpg");
+  margin-left: 90px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1366px;
+  height: 768px;
+  z-index: 1;
+}
+.logo {
+  background-image: url("image/indexnew.image/logo.jpg");
+  position: absolute;
+  left: 110px;
+  top: 18px;
+  width: 87px;
+  height: 21px;
+  z-index: 114;
+}
+.头像 {
+  background-image: url("image/indexnew.image/头像.jpg");
+  position: absolute;
+  left: 1316px;
+  top: 13px;
+  width: 33px;
+  height: 32px;
+  z-index: 114;
+}
+.穿搭 {
+  background-image: url("image/indexnew.image/穿搭.jpg");
+  position: absolute;
+  left: 565px;
+  top: 20px;
+  width: 38px;
+  height: 18px;
+  z-index: 118;
+}
+.论坛 {
+  background-image: url("image/indexnew.image/论坛.jpg");
+  position: absolute;
+  left: 617px;
+  top: 20px;
+  width: 39px;
+  height: 18px;
+  z-index: 119;
+}
+.新闻 {
+  background-image: url("image/indexnew.image/新闻.jpg");
+  position: absolute;
+  left: 670px;
+  top: 20px;
+  width: 36.5px;
+  height: 18px;
+  z-index: 120;
+}
+.个人中心 {
+  background-image: url("image/indexnew.image/个人中心.jpg");
+  position: absolute;
+  left: 723px;
+  top: 20px;
+  width: 77px;
+  height: 19px;
+  z-index: 121;
+}
+.图标 {
+  background-image: url("image/indexnew.image/图标.jpg");
+  position: absolute;
+  left: 145px;
+  top: 106px;
+  width: 163px;
+  height: 163px;
+  z-index: 5;
+}
+.文字 {
+  background-image: url("image/indexnew.image/文字.jpg");
+  position: absolute;
+  left: 162px;
+  top: 278px;
+  width: 127px;
+  height: 44.5px;
+  z-index: 6;
+}
+.消息 {
+  background-image: url("image/indexnew.image/消息.jpg");
+  position: absolute;
+  left: 213px;
+  top: 337px;
+  width: 26px;
+  height: 19px;
+  z-index: 8;
+}
+.查看个人资料 {
+  background-image: url("image/indexnew.image/查看个人资料.jpg");
+  position: absolute;
+  left: 167px;
+  top: 374px;
+  width: 115px;
+  height: 19px;
+  z-index: 7;
+}
+
+
+
+
+
+
+.bottom {
+  background-image: url("image/indexnew.image/bottom.jpg");
+  position: absolute;
+  left: 90px;
+  top: 737px;
+  width: 1366px;
+  height: 31px;
+  z-index: 105;
+}
+.header1 {
+  background-image: url("image/indexnew.image/header1.jpg");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1366px;
+  height: 59px;
+  z-index: 112;
+}
+.header2 {
+  background-image: url("image/indexnew.image/header2.jpg");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1366px;
+  height: 65px;
+  z-index: 103;
+}
+
+/* 中心 tabs */
+.center {
+  width: 600px;
+  height: 520px;
+  top: 205px;
+  left: 380px;
+  position: absolute;
+  z-index: 666;
+  
+}
+
+.content {
+  width: 100%;
+  height: 520px;
+  margin-top: 40px;
+  overflow-x: hidden;
+}
+
+.center-content {
+  width: 103%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+}
+
+.header-list {
+  position: absolute;
+  z-index: 999;
+  padding: 0;
+  margin: 0;
+  /* width: 100%; */
+  height: 100px;
+  color: #e0edff;
+  /* background: green; */
+  display: flex;
+}
+
+.header-list-item {
+  list-style: none;
+  margin-right: 25px;
+ 
+
+}
+
+.center-content-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.img-list {
+  list-style: none;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.history-img-list {
+  margin-bottom: 15px;
+}
+
+.div-three {
+  color: #e0edff;
+}
+
+.div-three-ul {
+  display: flex;
+  padding: 0;
+}
+
+.div-three-ul li {
+  list-style: none;
+  margin-right: 40px;
+  padding: 0;
+}
+
+
+/* 浮层 */
+.layer {
+  position: relative;
+  height: 248px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+
+
+.layer-content {
+  width: 157px;
+  height: 308px;
+  /* border: 1px solid green; */
+  position: absolute;
+  font-size: 7.81px;
+  color: white;
+  top: 0;
+  left: 0;
+  transition: top cubic-bezier(0.6, -0.28, 0.735, 0.045) .2s;
+}
+
+.layer-content:hover {
+  top: -60px;
+}
+
+.layer-content-font {
+  position: absolute;
+  width: 157px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, .3);
+  bottom: 0;
+  z-index: 555;
+}
+
+.font-scale {
+  transform: scale(.8);
+}
+
+
+

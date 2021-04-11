@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("div.post img").mouseenter(function(){ //鼠标移到图片上
+				$(this).hide();
+				$(this).next().show();
+				$(this).next().children().fadeIn("slow");
+			});
+			$("div.check").mouseleave(function(){ //鼠标从图片上移走
+				$(this).hide();
+				$(this).prev().show();
+				$(this).children().css("display","none");
+			});
+			$("div.button").click(function(){ //打开详情页
+				window.parent.document.getElementById("mask5").style.display="block";
+			});
+		});
+	</script>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;}
+		body{height: 100%; width: 100%; background-color: #050505;}
+		div#wrapper{width: 756px;margin: 0 auto;}
+		div.post{height: 248px; width: 756px;}
+		div.post img{height: 248px; width: 756px;}
+		div.check{
+			height: 248px;
+			width: 756px;
+			background-size: cover;
+			display: none;
+			position: relative;
+		}
+		div#check1{background-image: url(image/posts/check_post4.png);}
+		div#check2{background-image: url(image/posts/check_post5.png);}
+		div#check3{background-image: url(image/posts/check_post6.png);}
+		div#check4{background-image: url(image/posts/check_post4.png);}
+		div#check5{background-image: url(image/posts/check_post5.png);}
+		div#check6{background-image: url(image/posts/check_post6.png);}
+		div.button{
+			cursor: pointer;
+			width: 98px;
+			height: 47px;
+			background-image: url(image/posts/check.png);
+			background-size: cover;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="post">
+			<img src="image/posts/post4.png">
+			<div id="check1" class="check">
+				<div class="button check_button"></div>
+			</div>
+		</div>
+		<div class="post">
+			<img src="image/posts/post5.png">
+			<div id="check2" class="check">
+				<div class="button check_button"></div>
+			</div>
+		</div>
+		<div class="post">
+			<img src="image/posts/post6.png">
+			<div id="check3" class="check">
+				<div class="button check_button"></div>
+			</div>
+		</div>
+		<div class="post">
+			<img src="image/posts/post4.png">
+			<div id="check4" class="check">
+				<div class="button check_button"></div>
+			</div>
+		</div>
+		<div class="post">
+			<img src="image/posts/post5.png">
+			<div id="check5" class="check">
+				<div class="button check_button"></div>
+			</div>
+		</div>
+		<div class="post">
+			<img src="image/posts/post6.png">
+			<div id="check6" class="check">
+				<div class="button check_button"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

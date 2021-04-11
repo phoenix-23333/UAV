@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> my messages</title>
+    <link rel="stylesheet" type="text/css" href="my messages.css">
+    <script type="text/javascript" src="my messages.js"></script>
+    <style type="text/css">
+    	/*.button {
+            width: 150px;
+            height: 47px;
+            background-repeat: no-repeat;
+        }*/
+    </style>
+</head>
+<body>
+   
+        <div id="top">
+        <a href="../index.html" id="logo"></a>
+        <a href="../person/person.html" id="green_icon"></a>
+        <a href="../dress.html" id="穿搭"></a>
+        <a href="../forum.html" id="论坛"></a>
+        <a href="../new.html" id="新闻"></a>
+        <a href="../person/person.html" id="个人中心"></a>
+        </div>
+
+        <a href="../person/person.html" id="icon"></a>
+        <a href="../person/person.html" id="return"></a>
+        <div id="header"></div>
+        <div id="body1"></div>
+        <div id="bottom"></div>
+        <div id="bottom1"></div>
+        <form action="" class="回复框">
+            <textarea rows="6" cols="72"></textarea>
+            <input type="button" value="send" class="send" style="cursor: pointer;">
+        </form>
+    
+
+        <div style="width: 190px; height: 66px;"><button11 class="button1 button" onclick="btnClick(0)"></button11></div>
+        <div style="width: 190px; height: 66px;"><button11 class="button2 button" onclick="btnClick(1)"></button11></div>
+        <div style="width: 190px; height: 66px;"><button11 class="button3 button" onclick="btnClick(2)"></button11></div>
+        <div1 class="消息界面1" style="display:block;"></div1>
+        <div1 class="消息界面2" style="display:block;"></div1>
+        <div1 class="消息界面3" style="display:block;"></div1>
+    <!--<div class="img1"><img src="image/my messages/用户1click.jpg"></div>
+    <div class="img2"><img src="image/my messages/用户2click.jpg"></div>
+    <div class="img3"><img src="image/my messages/用户3click.jpg"></div>-->
+        <script type="text/javascript">
+            var buttonArr= document.getElementsByTagName("button11");
+            var divArr = document.getElementsByTagName("div1");
+
+            function btnClick(i) {
+            
+                for(var j = 0; j < buttonArr.length; j++) {
+                    console.log(j);
+                    buttonArr[j].style.backgroundImage = "url(" + "image/mymessages/用户"+(j+1)+".jpg" + ")";
+                //隐藏所有的div
+                    divArr[j].style.display = "none";
+                }
+
+                console.log(i);
+            //给当前的(点击的那个)那个button添加样式
+                buttonArr[i].style.backgroundImage = "url("+"image/mymessages/用户"+ (i+1) +"click.jpg"+")";
+            //显示点击按钮对应的div
+                divArr[i].style.display = "block";
+        }
+        
+
+        // for(var i = 0; i < buttonArr.length;i++) {
+        //     buttonArr[i].onclick = function() { 
+        //         //this 
+        //         // alert(this.innerHTML)
+        //     //for循环遍历button数组长度
+        //         for(var j = 0; j < buttonArr.length; j++) {
+        //             //重置所有的button样式
+        //             (function(j) {
+        //                 console.log(j);
+        //                 buttonArr[j].style.backgroundImage = "url(" + "image/mymessages/用户"+(j+1)+".jpg" + ")";
+        //                 //给当前的(点击的那个)那个button添加样式
+        //                 this.style.backgroundImage = "url("+"image/mymessages/用户"+ (j+1) +"click.jpg"+")";
+        //                 //this.style.backgroundColor = "#595959";//S
+        //                 //隐藏所有的div
+        //                 divArr[j].style.display = "none";
+        //                 //判断当前点击是按钮数组中的哪一个？
+        //                 if(this == buttonArr[j]) {
+        //                     // alert(j);
+        //                     //显示点击按钮对应的div
+        //                     divArr[j].style.display = "block";
+        //                 }
+        //             })(j);
+                    
+        //         }
+        //     }   
+        // }
+            </script>
+    </body>
+</html>

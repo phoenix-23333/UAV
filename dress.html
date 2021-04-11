@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bogue</title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".button").click(function(){ //选择风格
+				$("iframe#dress_image").attr("src","dress_image.html");
+  				if ($(this).css("color") == "rgb(255, 255, 255)") {
+  					$(this).css("color","rgb(63, 235, 220)");
+  				}else{
+  					$(this).css("color","rgb(255, 255, 255)");
+  				}
+  			});
+  			$("area#close").click(function(){	//关闭详情
+  				$("div#mask").hide();
+  			});
+  			/*选择季节开始*/
+  			$("div#season").mouseenter(function(){	//唤出季节列表
+  				$("div#season_list").show();
+  			});
+  			$("div#season").mouseleave(function(){	//隐藏季节列表
+  				$("div#season_list").mouseleave(function(){
+  					$("div#season_list").hide();
+  				});
+  			});
+  			$("div.a_season").mouseenter(function(){	//滑动效果
+  				$(this).css("background-image","url('image/dress/select_over.png')");
+  			});
+  			$("div.a_season").mouseleave(function(){	//滑动效果
+  				$(this).css("background-image","url('')");
+  			});
+  			$("div.a_season").click(function(){	//点击事件
+  				$("div#season").text($(this).text());
+  				$("div#season").css("background-image","url('image/dress/selected.png')")
+  				$("div#season_list").hide();
+  				$("iframe#dress_image").attr("src","dress_image.html");
+  			});
+  			/*选择季节结束*/
+  			/*选择情景开始*/
+  			$("div#scene").mouseenter(function(){	//唤出情景列表
+  				$("div#scene_list").show();
+  			});
+  			$("div#scene").mouseleave(function(){	//隐藏情景列表
+  				$("div#scene_list").mouseleave(function(){
+  					$("div#scene_list").hide();
+  				});
+  			});
+  			$("div.a_scene").mouseenter(function(){	//滑动效果
+  				$(this).css("background-image","url('image/dress/select_over.png')");
+  			});
+  			$("div.a_scene").mouseleave(function(){	//滑动效果
+  				$(this).css("background-image","url('')");
+  			});
+  			$("div.a_scene").click(function(){	//点击事件
+  				$("div#scene").text($(this).text());
+  				$("div#scene").css("background-image","url('image/dress/selected.png')")
+  				$("div#scene_list").hide();
+  				$("iframe#dress_image").attr("src","dress_image.html");
+  			});
+  			/*选择情景结束*/
+		});
+	</script>
+	<style type="text/css">
+		@font-face{
+			font-family: sortFont;
+			src: url('sortFont.otf');
+		}
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;-webkit-user-select: none;}
+		body{height: 100%; width: 100%; background-color: #050505;}
+		area{outline: none; cursor: pointer;}
+		.button{cursor: pointer;}
+		div#wrapper{
+			width: 1366px;
+			height: 768px;
+			margin: 0 auto;
+		}
+		header{width: 1366px; height: 65px;}
+		header img{width: 1366px; height: 65px;}
+		footer{width: 1366px;height: 31px;}
+		footer img{width: 1366px;height: 31px;}
+		main{
+			width: 1366px;
+			height: 672px;
+			background-image: url(image/dress/background.png);
+			background-size: cover;
+		}
+		div#navigation{
+			width: 100;
+			height: 29.33px;
+			color: #ffffff;
+			font-family: sortFont;
+			text-align: center;
+			font-size: 16px;
+		}
+		div.selector{
+			width: 64px;
+			height: 29.33px;
+			float: left;			
+			cursor: pointer;
+		}
+		div#season{margin-left: 409px;}
+		div#scene{margin-left: 33px;}
+		div#season_list,div#scene_list{
+			width: 116px;
+			height: 246px;
+			position: fixed;
+			margin-top: 30px;
+			display: none;
+		}
+		div#season_list{margin-left: 383px;}
+		div#scene_list{margin-left: 480px;}
+		div.a_season,div.a_scene{
+			width: 100%;
+			height: 50px;
+			background-color: #000000;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		div#content{
+			width: 100%;
+			height: 643.33px;
+		}
+		div#image{
+			width: 849px;
+			height: 100%;
+			margin-top: 24px;
+			margin-left: 65px;
+			float: left;
+			background-color: lightblue;
+			overflow: hidden;
+		}
+		iframe#dress_image{
+			width: 869px;
+			height: 663.33px;
+			border: 0;
+		}
+		div#sort{
+			width: 75.68px;
+			height: 499.49px;
+			margin-top: 39.78px;
+			margin-left: 141.05px;
+			float: left;
+			font-size: 20px;
+			font-family: sortFont;
+		}
+		div.style{
+			margin-top: 12px;
+		}
+		div.button2{width: 40px;}
+		div.button3{width: 60px;}
+		div.button4{width: 80px;}
+		div.button{
+			color: rgb(255, 255, 255);
+			margin: 0 auto;
+		}
+	</style>
+	<!--详情弹窗开始-->
+	<style type="text/css">
+		div#mask{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(image/dress/mask.png);
+			display: none;
+		}
+		div#window{
+			width: 692px;
+			height: 768px;
+			margin: -30px auto;
+		}
+		div#window img{width: 692px;height: 768px;}
+		img#check_post2,img#check_post3{display: none;}
+	</style>
+	<!--详情弹窗结束-->
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<img src="image/frame/dress_header.png" usemap="#forum_header">
+			<map id="forum_header" name="forum_header">
+				<area shape="rect" coords="20,18,111,39" href="index.html" alt="logo">
+				<area shape="rect" coords="565,20,603,38" href="dress.html" alt="穿搭">
+				<area shape="rect" coords="617,20,656,38" href="forum.html" alt="论坛">
+				<area shape="rect" coords="670,20,708,38" href="new.html" alt="新闻">
+				<area shape="rect" coords="723,20,801,38" href="person/person.html" alt="个人中心">
+				<area shape="circle" coords="1332.5,29,16.5" href="person/person.html" alt="头像">
+			</map>
+		</header>
+		<main>
+			<div id="navigation">
+				<div id="season" class="selector">季节</div>
+				<div id="scene" class="selector">场景</div>
+				<div id="season_list">
+					<div class="a_season">全部</div>
+					<div class="a_season">春</div>
+					<div class="a_season">夏</div>
+					<div class="a_season">秋</div>
+					<div class="a_season">冬</div>
+				</div>
+				<div id="scene_list">
+					<div class="a_scene">全部</div>
+					<div class="a_scene">日常</div>
+					<div class="a_scene">聚会</div>
+					<div class="a_scene">运动</div>
+					<div class="a_scene">出行</div>
+				</div>
+			</div>
+			<div id="content">
+				<div id="image">
+					<iframe id="dress_image" src="dress_image.html"></iframe>
+				</div>
+				<div id="sort">
+					<div class="style"><div class="button2 button">全部</div></div>
+					<div class="style"><div class="button4 button">工装军旅</div></div>
+					<div class="style"><div class="button4 button">休闲运动</div></div>
+					<div class="style"><div class="button2 button">简约</div></div>
+					<div class="style"><div class="button2 button">嘻哈</div></div>
+					<div class="style"><div class="button2 button">欧美</div></div>
+					<div class="style"><div class="button4 button">日系复古</div></div>
+					<div class="style"><div class="button2 button">韩风</div></div>
+					<div class="style"><div class="button2 button">商务</div></div>
+					<div class="style"><div class="button4 button">美式休闲</div></div>
+					<div class="style"><div class="button3 button">中国风</div></div>
+					<div class="style"><div class="button2 button">清新</div></div>
+					<div class="style"><div class="button4 button">英伦学院</div></div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<img src="image/frame/footer.png" usemap="#footer">
+			<map id="footer" name="footer">
+				<area shape="rect" coords="11,9,65,23" href="" alt="隐私政策">
+				<area shape="rect" coords="105,9,159,23" href="" alt="联系我们">
+				<area shape="rect" coords="199,9,253,23" href="" alt="网站地图">
+			</map>
+		</footer>
+		<!--详情弹窗开始-->
+		<div id="mask">
+			<div id="window">
+				<img id="check_post1" src="image/dress/check_post1.png" usemap="#post">
+				<img id="check_post2" src="image/dress/check_post2.png" usemap="#post">
+				<img id="check_post3" src="image/dress/check_post3.png" usemap="#post">
+				<map id="post" name="post">
+					<area shape="circle" coords="167.5,71,22" alt="头像">
+					<area shape="rect" coords="253,65,322,76" alt="关注">
+					<area id="close" shape="rect" coords="623,55,645,77" alt="关闭">
+					<area shape="rect" coords="568,307,585,324" alt="点赞">
+					<area shape="rect" coords="568,376,586,393" alt="收藏">
+					<area shape="rect" coords="568,444,585,461" alt="转发">
+					<area id="prev"  shape="rect" coords="0,619,31,647" alt="上一张">
+					<area id="next" shape="rect" coords="661,619,692,947" alt="下一张">
+				</map>
+			</div>
+		</div>
+		<!--详情弹窗结束-->
+	</div>
+</body>
+</html>

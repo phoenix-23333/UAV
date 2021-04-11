@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bogue</title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">		
+		$(document).ready(function(){
+			/*发帖弹窗开始*/
+			$("div.posting").click(function(){	//打开发帖弹窗
+				$("div#mask1").show();
+			});
+			$("area#close_posting").click(function(){ //关闭发帖弹窗
+				$("div#mask1").hide();
+			});
+			$("area#post_talk").click(function(){ //发讨论帖
+				$("img#posting_talk").show();
+				$("img#posting_help").hide();
+				$("img#posting_sale").hide();
+			});
+			$("area#post_help").click(function(){ //发求助帖
+				$("img#posting_talk").hide();
+				$("img#posting_help").show();
+				$("img#posting_sale").hide();
+			});
+			$("area#post_sale").click(function(){ //发买卖帖
+				$("img#posting_talk").hide();
+				$("img#posting_help").hide();
+				$("img#posting_sale").show();
+			});
+			$("div#upload_post").click(function(){
+				window.alert("发帖成功");
+				window.location.reload();
+			});
+			/*发帖弹窗结束*/
+			/*转发弹窗开始*/
+			$("div#close_share").click(function(){	//关闭转发弹窗
+				$("div#mask4").hide();
+			});
+			$("div#to_share").click(function(){
+				window.alert("转发成功");
+				window.location.reload();
+			});
+			/*转发弹窗结束*/
+			/*论坛导航开始*/
+			$("area#to_talk").click(function(){ //选择讨论区
+				$("img#in_talk").show();
+				$("img#in_help").hide();
+				$("img#in_sale").hide();
+				$("div#talk_content").show();
+				$("div#help_content").hide();
+				$("div#sale_content").hide();
+				$("iframe#talk").attr("src","talk_posts.html");
+			});
+			$("area#to_hlep").click(function(){ //选择求助区
+				$("img#in_talk").hide();
+				$("img#in_help").show();
+				$("img#in_sale").hide();
+				$("div#talk_content").hide();
+				$("div#help_content").show();
+				$("div#sale_content").hide();
+				$("iframe#help").attr("src","help_posts.html");
+			});
+			$("area#to_sale").click(function(){ //选择买卖区
+				$("img#in_talk").hide();
+				$("img#in_help").hide();
+				$("img#in_sale").show();
+				$("div#talk_content").hide();
+				$("div#help_content").hide();
+				$("div#sale_content").show();
+			});
+			/*论坛导航结束*/
+			/*讨论区开始*/
+			$("area.to_concern").click(function(){ //选择我的关注
+				$("img.sort_concern").show();
+				$("img.sort_hottest").hide();
+				$("img.sort_newest").hide();
+				$("img.sort_history").hide();
+				$("iframe#talk").attr("src","talk_posts.html");
+			});
+			$("area.to_hottest").click(function(){ //选择今日热榜
+				$("img.sort_concern").hide();
+				$("img.sort_hottest").show();
+				$("img.sort_newest").hide();
+				$("img.sort_history").hide();
+				$("iframe#talk").attr("src","talk_posts.html");
+			});
+			$("area.to_newest").click(function(){ //选择最新帖子
+				$("img.sort_concern").hide();
+				$("img.sort_hottest").hide();
+				$("img.sort_newest").show();
+				$("img.sort_history").hide();
+				$("iframe#talk").attr("src","talk_posts.html");
+			});
+			$("area.to_history").click(function(){ //选择浏览记录
+				$("img.sort_concern").hide();
+				$("img.sort_hottest").hide();
+				$("img.sort_newest").hide();
+				$("img.sort_history").show();
+				$("iframe#talk").attr("src","talk_posts.html");
+			});
+			/*讨论区结束*/
+			/*求助区开始*/
+			$("area.to_concern").click(function(){ //选择我的关注
+				$("img.sort_concern").show();
+				$("img.sort_hottest").hide();
+				$("img.sort_newest").hide();
+				$("img.sort_history").hide();
+				$("iframe#help").attr("src","help_posts.html");
+			});
+			$("area.to_hottest").click(function(){ //选择今日热榜
+				$("img.sort_concern").hide();
+				$("img.sort_hottest").show();
+				$("img.sort_newest").hide();
+				$("img.sort_history").hide();
+				$("iframe#help").attr("src","help_posts.html");
+			});
+			$("area.to_newest").click(function(){ //选择最新帖子
+				$("img.sort_concern").hide();
+				$("img.sort_hottest").hide();
+				$("img.sort_newest").show();
+				$("img.sort_history").hide();
+				$("iframe#help").attr("src","help_posts.html");
+			});
+			$("area.to_history").click(function(){ //选择浏览记录
+				$("img.sort_concern").hide();
+				$("img.sort_hottest").hide();
+				$("img.sort_newest").hide();
+				$("img.sort_history").show();
+				$("iframe#help").attr("src","help_posts.html");
+			});
+			/*求助区结束*/
+			/*买卖区开始*/
+			$("area#check_concern").click(function(){ //选择我的关注
+				$("img#sale_concern").show();
+				$("img#sale_hottest").hide();
+				$("img#sale_newest").hide();
+				$("img#sale_history").hide();
+				$("iframe#sale").attr("src","sale_posts.html");
+			});
+			$("area#check_hottest").click(function(){ //选择人气二手
+				$("img#sale_concern").hide();
+				$("img#sale_hottest").show();
+				$("img#sale_newest").hide();
+				$("img#sale_history").hide();
+				$("iframe#sale").attr("src","sale_posts.html");
+			});
+			$("area#check_newest").click(function(){ //选择最新发布
+				$("img#sale_concern").hide();
+				$("img#sale_hottest").hide();
+				$("img#sale_newest").show();
+				$("img#sale_history").hide();
+				$("iframe#sale").attr("src","sale_posts.html");
+			});
+			$("area#check_history").click(function(){ //选择浏览记录
+				$("img#sale_concern").hide();
+				$("img#sale_hottest").hide();
+				$("img#sale_newest").hide();
+				$("img#sale_history").show();
+				$("iframe#sale").attr("src","sale_posts.html");
+			});
+			/*买卖区结束*/
+		});
+	</script>
+	<style type="text/css">
+		@font-face{
+			font-family: sortFont;
+			src: url('sortFont.otf');
+		}
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;-webkit-user-select: none;}
+		body{height: 100%; width: 100%; background-color: #050505;}
+		area{outline: none; cursor: pointer;}
+		.button{cursor: pointer;}
+		div#wrapper{
+			width: 1366px;
+			height: 768px;
+			margin: 0 auto;
+		}
+		header{width: 1366px; height: 65px;}
+		header img{width: 1366px; height: 65px;}
+		footer{width: 1366px;height: 31px;}
+		footer img{width: 1366px;height: 31px;}
+		main{
+			width: 1366px;
+			height: 672px;
+			background-image: url(image/forum/background.png);
+			background-size: cover;
+		}
+		div#navigation{
+			width: 1366px;
+			height: 50px;
+		}
+		div#navigation img{width: 1366px;height: 50px;}
+		img#in_help,img#in_sale{display: none;}
+	</style>
+	<!--论坛内容开始-->
+	<style type="text/css">
+		div.content{
+			width: 1366px;
+			height: 623px;
+		}
+		div#help_content,div#sale_content{display: none;}
+		div.left{
+			width: 403px;
+			height: 623px;
+			float: left;
+		}
+		div.mid{
+			width: 756px;
+			height: 623px;
+			float: left;
+			overflow: hidden;
+		}
+		div.mid iframe{
+			width: 776px;
+			height: 623px;
+			border: 0;
+			overflow-x: hidden;
+		}
+		div.right{
+			width: 207px;
+			height: 623px;
+			float: left;
+		}
+		div#posting{
+			width: 35px;
+			height: 32px;
+			position: absolute;
+			margin-top: 254px;
+			margin-left: 38px;
+			background-image: url(image/forum/posting.png);
+			background-size: cover;
+		}
+		div.sort{
+			width: 66px;
+			height: 143px;
+			position: absolute;
+			margin-top: 49px;
+			margin-left: 314px;
+		}
+		div.sort img{
+			width: 66px;
+			height: 143px;
+		}
+		div.tag{
+			width: 100px;
+			height: 313px;
+			position: absolute;
+			margin-top: 111px;
+			margin-left: 108px;
+		}
+		div.tag img{width: 100px;height: 313px;}
+		img.sort_hottest,img.sort_newest,img.sort_history{display: none;}
+		img#sale_hottest,img#sale_newest,img#sale_history{display: none;}
+	</style>
+	<!--论坛内容结束-->
+	<!--发帖弹窗开始-->
+	<style type="text/css">
+		div.mask{
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		div#mask1{
+			background-image: url(image/forum/mask.png);	
+		}
+		div#postwindow{
+			width: 446px;
+			height: 298px;
+			margin: 10% auto;
+			background-image: url(image/forum/postwindow.png);
+			background-size: cover;
+		}
+		div#posting_header{
+			width: 100%;
+			height: 56px;
+		}
+		div#posting_header img{
+			width: 100%;
+			height: 56px;
+		}
+		img#posting_help,img#posting_sale{display: none;}
+		div#posting_content{
+			width: 100%;
+			height: 204px;
+		}
+		input#post_title{
+			width: 404px;
+			height: 14px;
+			margin-left: 22px;
+			border: 0;
+			outline: none;
+		}
+		div#post_content{
+			width: 404px;
+			height: 165px;
+			margin-top: 15px;
+			margin-left: 22px;
+			outline: none;
+			overflow: auto;
+		}
+		div#posting_footer{
+			width: 100%;
+			height: 38px;
+			position: relative;
+		}
+		div#posting_footer div{position: absolute;}
+		div#uoload_image{
+			width: 27px;
+			height: 22px;
+			margin-top: 5px;
+			margin-left: 22px;
+		}
+		div#emoji{
+			width: 20px;
+			height: 20px;
+			margin-top: 7px;
+			margin-left: 58px;
+		}
+		div#upload_post{
+			width: 36px;
+			height: 32px;
+			margin-left: 397px;
+		}
+	</style>
+	<!--发帖弹窗结束-->
+	<!--帖子详情页开始-->
+	<style type="text/css">
+		div#check_talk,div#check_help,div#check_sale{
+			width: 787.33px;
+			height: 657px;
+			margin-top: 111px;
+			margin-left: 480px;
+			overflow: hidden;
+		}
+		div#check_talk iframe,div#check_help iframe,div#check_sale iframe{
+			border: 0;
+			outline: none;
+			width: 807.33px;
+			height: 610px;
+		}
+	</style>
+	<!--帖子详情页结束-->
+	<!--转发弹窗开始-->
+	<style type="text/css">
+		div#share_window{
+			width: 488px;
+			height: 236px;
+			margin: 10% auto;
+			background-image: url(image/forum/share.png);
+			background-size: cover;
+			position: relative;
+		}
+		div#close_share{
+			position: absolute;
+			width: 19px;
+			height: 19px;
+			margin-top: 7px;
+			margin-left: 460px;
+		}
+		div#to_share{
+			position: absolute;
+			width: 28px;
+			height: 28px;
+			margin-top: 197px;
+			margin-left: 230px;
+		}
+		div#share_content{
+			position: absolute;
+			width: 418px;
+			height: 134px;
+			margin-top: 49px;
+			margin-left: 36px;
+			outline-color: #38cec3;
+			overflow: auto;
+			font-family: sortFont;
+		}
+	</style>
+	<!--转发弹窗结束-->
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<img src="image/frame/forum_header.png" usemap="#forum_header">
+			<map id="forum_header" name="forum_header">
+				<area shape="rect" coords="20,18,111,39" href="index.html" alt="logo">
+				<area shape="rect" coords="565,20,603,38" href="dress.html" alt="穿搭">
+				<area shape="rect" coords="617,20,656,38" href="forum.html" alt="论坛">
+				<area shape="rect" coords="670,20,708,38" href="new.html" alt="新闻">
+				<area shape="rect" coords="723,20,801,38" href="person/person.html" alt="个人中心">
+				<area shape="circle" coords="1332.5,29,16.5" href="person/person.html" alt="头像">
+			</map>
+		</header>
+		<main>
+			<div id="navigation">
+				<img id="in_talk" src="image/forum/in_talk.png" usemap="#navigation">
+				<img id="in_help" src="image/forum/in_help.png" usemap="#navigation">
+				<img id="in_sale" src="image/forum/in_sale.png" usemap="#navigation">
+				<map id="navigation" name="navigation">
+					<area id="to_talk" shape="rect" coords="455,10,504,26" alt="讨论区">
+					<area id="to_hlep" shape="rect" coords="659,10,707,26" alt="求助区">
+					<area id="to_sale" shape="rect" coords="862,10,910,26" alt="买卖区">
+					<area shape="rect" coords="1323,18,1342,38" alt="搜索">
+				</map>
+			</div>
+			<!--讨论区内容开始-->
+			<div id="talk_content" class="content">
+				<div class="left">
+					<div id="posting" class="button posting"></div>
+					<div class="sort">
+						<img class="sort_concern" src="image/forum/sort_concern.png" usemap="#sort">
+						<img class="sort_hottest" src="image/forum/sort_hottest.png" usemap="#sort">
+						<img class="sort_newest" src="image/forum/sort_newest.png" usemap="#sort">
+						<img class="sort_history" src="image/forum/sort_history.png" usemap="#sort">
+						<map id="sort" name="sort">
+							<area class="to_concern" shape="rect" coords="0,0,66,15" alt="我的关注">
+							<area class="to_hottest" shape="rect" coords="0,41,66,56" alt="今日热榜">
+							<area class="to_newest" shape="rect" coords="0,85,66,100" alt="最新帖子">
+							<area class="to_history" shape="rect" coords="0,127,66,142" alt="浏览记录">
+						</map>
+					</div>
+				</div>
+				<div class="mid">
+					<iframe id="talk" src="talk_posts.html"></iframe>
+				</div>
+				<div class="right">
+					<div class="tag">
+						<img src="image/forum/tags.png" usemap="#tags">
+						<map id="tags" name="tags">
+							<area shape="rect" coords="38,30,82,42" alt="冬季">
+							<area shape="rect" coords="24.5,57,82,70" alt="优衣库">
+							<area shape="rect" coords="11.5,85,82,97" alt="校招穿搭">
+							<area shape="rect" coords="11.5,112,82,125" alt="便宜好鞋">
+							<area shape="rect" coords="38,140,82,152.5" alt="">
+							<area shape="rect" coords="38,168,82,180" alt="">
+							<area shape="rect" coords="38,195,82,208" alt="">
+							<area shape="rect" coords="38,223,82,235" alt="">
+							<area shape="rect" coords="38,250,82,263" alt="">
+							<area shape="rect" coords="38,278,82,290.5" alt="">
+							<area shape="rect" coords="50,306,82,313" alt="更多">
+						</map>
+					</div>
+				</div>
+			</div>
+			<!--讨论区内容结束-->
+			<!--求助区内容开始-->
+			<div id="help_content" class="content">
+				<div class="left">
+					<div id="posting" class="button posting"></div>
+					<div class="sort">
+						<img class="sort_concern" src="image/forum/sort_concern.png" usemap="#sort">
+						<img class="sort_hottest" src="image/forum/sort_hottest.png" usemap="#sort">
+						<img class="sort_newest" src="image/forum/sort_newest.png" usemap="#sort">
+						<img class="sort_history" src="image/forum/sort_history.png" usemap="#sort">
+					</div>
+				</div>
+				<div class="mid">
+					<iframe id="help" src="help_posts.html"></iframe>
+				</div>
+				<div class="right">
+					<div class="tag">
+						<img src="image/forum/tags.png" usemap="#tags">
+					</div>
+				</div>
+			</div>
+			<!--求助区内容结束-->
+			<!--买卖区内容开始-->
+			<div id="sale_content" class="content">
+				<div class="left">
+					<div id="posting" class="button posting"></div>
+					<div class="sort">
+						<img id="sale_concern" src="image/forum/sale_concern.png" usemap="#sale_sort">
+						<img id="sale_hottest" src="image/forum/sale_hottest.png" usemap="#sale_sort">
+						<img id="sale_newest" src="image/forum/sale_newest.png" usemap="#sale_sort">
+						<img id="sale_history" src="image/forum/sale_history.png" usemap="#sale_sort">
+						<map id="sale_sort" name="sale_sort">
+							<area id="check_concern" shape="rect" coords="0,0,66,15" alt="我的关注">
+							<area id="check_hottest" shape="rect" coords="0,41,66,56" alt="人气二手">
+							<area id="check_newest" shape="rect" coords="0,85,66,100" alt="最新发布">
+							<area id="check_history" shape="rect" coords="0,127,66,142" alt="浏览记录">
+						</map>
+					</div>
+				</div>
+				<div class="mid">
+					<iframe id="sale" src="sale_posts.html"></iframe>
+				</div>
+				<div class="right">
+					<div class="tag">
+						<img src="image/forum/tags.png" usemap="#tags">
+					</div>
+				</div>
+			</div>
+			<!--买卖区内容结束-->
+		</main>
+		<footer>
+			<img src="image/frame/footer.png" usemap="#footer">
+			<map id="footer" name="footer">
+				<area shape="rect" coords="11,9,65,23" href="" alt="隐私政策">
+				<area shape="rect" coords="105,9,159,23" href="" alt="联系我们">
+				<area shape="rect" coords="199,9,253,23" href="" alt="网站地图">
+			</map>
+		</footer>
+		<!--发帖弹窗开始-->
+		<div id="mask1" class="mask">
+			<div id="postwindow">
+				<div id="posting_header">
+					<img id="posting_talk" src="image/forum/posting_talk.png" usemap="#posting">
+					<img id="posting_help" src="image/forum/posting_help.png" usemap="#posting">
+					<img id="posting_sale" src="image/forum/posting_sale.png" usemap="#posting">
+					<map id="posting" name="posting">
+						<area id="post_talk" shape="rect" coords="22,20,89,40" alt="讨论帖">
+						<area id="post_help" shape="rect" coords="100,20,167,40" alt="求助帖">
+						<area id="post_sale" shape="rect" coords="177,20,243,40" alt="买卖贴">
+						<area id="close_posting" shape="rect" coords="404,19,426,41" alt="关闭">
+					</map>
+				</div>
+				<div id="posting_content">
+					<input id="post_title" type="text" name="" placeholder="标题">
+					<div id="post_content" contenteditable="true"><p>内容</p></div>
+				</div>
+				<div id="posting_footer">
+					<div id="uoload_image" class="button"></div>
+					<div id="emoji" class="button"></div>
+					<div id="upload_post" class="button">
+						<a href="forum.html"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--发帖弹窗结束-->
+		<!--讨论帖详情页开始-->
+		<div id="mask2" class="mask">
+			<div id="check_talk">
+				<iframe src="check_talk.html"></iframe>
+			</div>
+		</div>
+		<!--讨论帖详情页结束-->
+		<!--求助帖详情页开始-->
+		<div id="mask5" class="mask">
+			<div id="check_help">
+				<iframe src="check_help.html"></iframe>
+			</div>
+		</div>
+		<!--求助帖详情页结束-->
+		<!--买卖帖详情页开始-->
+		<div id="mask3" class="mask">
+			<div id="check_sale">
+				<iframe src="check_sale.html"></iframe>
+			</div>
+		</div>
+		<!--买卖帖详情页结束-->
+		<!--转发弹窗开始-->
+		<div id="mask4" class="mask">
+			<div id="share_window">
+				<div id="close_share" class="button"></div>
+				<div id="share_content" contenteditable="true"><p></p></div>
+				<div id="to_share" class="button"></div>
+			</div>
+		</div>
+		<!--转发弹窗结束-->
+	</div>
+</body>
+</html>

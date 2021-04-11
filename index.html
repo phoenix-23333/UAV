@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bogue</title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+  			$("#open_nav").click(function(){$("#nav_mask").show();}); //打开导航栏
+  			$("#close_nav").click(function(){$("#nav_mask").hide();});	//关闭导航栏
+  			$("area.open_sign").click(function(){ //打开登录界面
+  				$("#nav_mask").hide();
+  				$("div#welcome").hide();
+  				$("div#sign").show();
+  			});
+  			$("div#close_sign").click(function(){ //关闭登录界面
+  				$("div#sign").hide();
+  				$("div#welcome").show();
+  			});
+  			$("div#sign_in").click(function(){
+  				window.location.href="signed.html";
+  			});
+		});
+	</script>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		html{height: 100%; width: 100%;-webkit-user-select: none;}
+		body{
+			height: 100%;
+			width: 100%;
+			background-color: #050505;
+        }
+        area{outline: none; cursor: pointer;}
+        .button{cursor: pointer;}
+        div#welcome{
+        	margin: 0 auto;
+        	width: 1366px;
+        	height: 768px;
+        }
+        img#background{
+        	width: 1366px;
+        	height: 768px;
+        }
+	</style>
+	<!--隐藏导航栏开始-->
+	<style type="text/css">
+		div#header{
+        	width: 1366px;
+        	height: 135px;
+        	margin: 0 auto;
+        	position: relative;
+        }
+        img#navigation{
+        	width: 1366px;
+        	height: 135px;
+        	opacity: 0.8;
+        }
+        div#nav_mask{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+	</style>
+	<!--隐藏导航栏结束-->
+	<!--登录弹窗开始-->
+	<style type="text/css">
+		div#sign{
+			margin: 0 auto;
+        	width: 1366px;
+        	height: 768px;
+			background-image: url(image/index/sign.png);
+			background-size: cover;
+			display: none;
+		}
+		div#sign_window{
+			position: absolute;
+			width: 472px;
+			height: 351px;
+			margin-top: 190px;
+			margin-left: 454px;
+		}
+		div#sign_header{
+			width: 472px;
+			height: 114px;
+		}
+		form{
+			width: 472px;
+			height: 94px;
+		}
+		div#sign_footer{
+			width: 472px;
+			height: 143px;
+		}
+		div#close_sign{
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			margin-top: 37px;
+			margin-left: 454px;
+		}
+		input{
+			width: 230px;
+			height: 20px;
+			background-color: #030303;
+			outline: none;
+			border: 0;
+			color: white;
+			font-size: 14px;
+		}
+		input#username{
+			margin-left: 145px; 
+		}
+		input#password{
+			margin-top: 40px;
+			margin-left: 145px;
+		}
+		div#sign_footer div{position: absolute;}
+		div#to_help{
+			width: 23px;
+			height: 11px;
+			margin-top: 46px;
+			margin-left: 27px;
+		}
+		div#sign_in{
+			width: 114px;
+			height: 30px;
+			margin-top: 31px;
+			margin-left: 179px;
+		}
+		div#to_login{
+			width: 46px;
+			height: 11px;
+			margin-top: 46px;
+			margin-left: 397px;
+		}
+		div#wechat{
+			width: 29px;
+			height: 25px;
+			margin-top: 90px;
+			margin-left: 169px;
+		}
+		div#qq{
+			width: 22px;
+			height: 24px;
+			margin-top: 90px;
+			margin-left: 225px;
+		}
+		div#google{
+			width: 26px;
+			height: 27px;
+			margin-top: 89px;
+			margin-left: 274px;
+		}
+	</style>
+	<!--登录弹窗结束-->
+</head>
+<body>
+	<div id="nav_mask">
+		<div id="header">
+			<img id="navigation" src="image/index/navigation.png" usemap="#nav_map">
+			<map id="nav_map" name="nav_map">
+				<area id="close_nav" shape="rect" coords="670,20,696,46" alt="关闭导航栏">
+				<area class="open_sign" shape="rect" coords="1159,51,1218,69" alt="登录">
+				<area shape="rect" coords="498,82,532,99" href="dress.html" target="_blank" alt="穿搭">
+				<area shape="rect" coords="598,83,632,99" href="forum.html" target="_blank" alt="论坛">
+				<area shape="rect" coords="700,83,732,99" href="new.html" target="_blank" alt="新闻">
+				<area shape="rect" coords="800,83,868,99" href="person/person.html" target="_blank" alt="个人中心">
+			</map>
+		</div>
+	</div>
+	
+	<div id="welcome">
+		<img id="background" src="image/index/background.png" usemap="#icon">
+		<map id="icon" name="icon">
+			<area id="open_nav" shape="rect" coords="671,51,696,68" alt="导航栏">
+			<area class="open_sign" shape="rect" coords="1160,52,1218,69" alt="登录">
+			<area id="to_dress" shape="rect" coords="615,507,751,544" href="dress.html" alt="开始穿搭">
+			<area id="to_news" shape="rect" coords="671,689,695,709" href="new.html" alt="翻页">
+		</map>
+	</div>
+
+	<div id="sign">
+		<div id="sign_window">
+			<div id="sign_header">
+				<div id="close_sign" class="button"></div>
+			</div>
+			<form>
+				<input id="username" type="text" name="" placeholder="请输入电子邮件"><br/>
+				<input id="password" type="password" name="" placeholder="请输入密码">
+			</form>
+			<div id="sign_footer">
+				<div id="to_help" class="button"></div>
+				<div id="sign_in" class="button"></div>
+				<div id="to_login" class="button" onclick="window.open('login.html')"></div>
+				<div id="wechat" class="button" onclick="window.open('https://wx.qq.com/')"></div>
+				<div id="qq" class="button" onclick="window.open('https://im.qq.com/')"></div>
+				<div id="google" class="button" onclick="window.open('https://myaccount.google.com/')"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
